@@ -1,25 +1,74 @@
-# Add project specific ProGuard rules here.
-# By default, the flags in this file are appended to flags specified
-# in C:\sdk/tools/proguard/proguard-android.txt
-# You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+-ignorewarnings
+-renamesourcefileattribute SourceFile
+-keepattributes Exceptions,SourceFile,LineNumberTable,*Annotation*,Signature
 
-# Add any project specific keep options here:
+-keep public class * extends android.app.IntentService
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.app.Fragment
+-keep public class * extends android.support.v4.app.Fragment
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class * extends com.google.inject.AbstractModule
+-keep public class com.android.vending.licensing.ILicensingService
+-keep class com.google.inject.** { *; }
+-keep class javax.inject.** { *; }
+-keep class javax.annotation.** { *; }
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+-keepclasseswithmembers class * {
+    public <init> (android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembers class * {
+    public <init> (android.content.Context, android.util.AttributeSet, int);
+}
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+-keepclassmembers,allowobfuscation class * {
+    @org.codehaus.jackson.annotate.JsonProperty <init>(...);
+    @org.codehaus.jackson.annotate.JsonIgnoreProperties <init>(...);
+    @com.google.inject.Inject <init>(...);
+    @com.google.inject.InjectResource <init>(...);
+    @com.google.inject.Inject <fields>;
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+    public <methods>;
+}
+
+-dontwarn android.support.**
+
+#retrofit
+-keep class retrofit.** { *; }
+-keep class es.tid.gconnect.api.** { *; }
+
+### Google Play Services
+-keep class * extends java.util.ListResourceBundle {
+    protected Object[][] getContents();
+}
+
+#Remove logs
+-assumenosideeffects class android.util.Log {
+    public static *** d(...);
+    public static *** i(...);
+    public static *** v(...);
+    public static *** w(...);
+    public static *** e(...);
+    public static *** wtf(...);
+    public static *** println(...);
+}
+
+#ButterKnife
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewInjector { *; }
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
+
+# Retrolambda
+-dontwarn java.lang.invoke.*
