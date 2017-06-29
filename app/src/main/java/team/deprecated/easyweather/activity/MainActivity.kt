@@ -1,7 +1,8 @@
-package team.deprecated.easyweather
+package team.deprecated.easyweather.activity
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import team.deprecated.easyweather.R
 
 class MainActivity : AppCompatActivity() {
 
