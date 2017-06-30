@@ -7,9 +7,6 @@ import team.deprecated.easyweather.WeatherApplication
 import team.deprecated.easyweather.di.ActivityBindingModule
 import team.deprecated.easyweather.di.scope.ApplicationScope
 
-/**
- * Created by Artur on 30.06.2017.
- */
 @Component(modules = arrayOf(
         AndroidSupportInjectionModule::class,
         ActivityBindingModule::class
