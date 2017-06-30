@@ -91,6 +91,7 @@ dependencies {
     compile "com.google.dagger:dagger-android:$rootProject.ext.dagger2Version"
     compile "com.google.dagger:dagger-android-support:$rootProject.ext.dagger2Version"
     kapt "com.google.dagger:dagger-android-processor:$rootProject.ext.dagger2Version"
+    //apt "com.google.dagger:dagger-compiler:2.7"
     provided 'org.glassfish:javax.annotation:10.0-b28'
     compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
