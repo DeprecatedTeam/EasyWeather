@@ -1,4 +1,4 @@
-package team.deprecated.easyweather.mvp
+package team.deprecated.easyweather.activity.mvp
 
 /**
  * Created by kpiega on 29.06.2017.
