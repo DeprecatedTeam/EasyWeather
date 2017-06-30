@@ -26,3 +26,30 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    kotlinVersion = '1.1.2-4'
+    ankoVersion = '0.10.0'
+    rxKotlinVersion = '2.0.0'
+
+    supportLibraryVersion = '25.3.1'
+
+    dagger2Version = '2.11-rc2'
+
+    retrofitVersion = '2.1.0'
+    okHttpVersion = '3.5.0'
+    gsonVersion = '2.8.0'
+
+    // RX //
+    rxjava2Version = '2.0.5'
+    rxandroidVersion = '2.0.1'
+    rxjavaAdapter = '2.2.0'
+
+    // LOG //
+    timberVersion = '4.5.1'
+
+    // TEST //
+    junitVersion = '4.12'
+    mockitoVersion = '2.8.47'
+    espressoVersion = '2.2.2'
+}
