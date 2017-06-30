@@ -3,6 +3,7 @@ package team.deprecated.easyweather
 import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
+import team.deprecated.easyweather.di.component.DaggerApplicationComponent
 
 
 class WeatherApplication : DaggerApplication() {
