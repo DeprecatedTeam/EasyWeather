@@ -7,8 +7,8 @@ class MainPresenterImpl: MainPresenter {
 
     override fun attachView(view: MainView?) = view.let { mainView = it }
 
-    override fun detachView(retainInstance: Boolean) {
-        mainView = null
-    }
+    override fun detachView(retainInstance: Boolean) { mainView = null }
+
+
 
 }
