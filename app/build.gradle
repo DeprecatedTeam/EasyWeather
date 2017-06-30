@@ -57,6 +57,10 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
 
+    compile 'com.hannesdorfmann.mosby3:mvp:3.0.4' // Plain MVP
+    // or
+    compile 'com.hannesdorfmann.mosby3:viewstate:3.0.4' // MVP + ViewState support
+
     // SUPPORT
     compile "com.android.support:appcompat-v7:$supportLibraryVersion"
     compile "com.android.support:mediarouter-v7:$supportLibraryVersion"
@@ -91,6 +95,7 @@ dependencies {
     compile "com.google.dagger:dagger-android:$rootProject.ext.dagger2Version"
     compile "com.google.dagger:dagger-android-support:$rootProject.ext.dagger2Version"
     kapt "com.google.dagger:dagger-android-processor:$rootProject.ext.dagger2Version"
+    //apt "com.google.dagger:dagger-compiler:2.7"
     provided 'org.glassfish:javax.annotation:10.0-b28'
     compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
