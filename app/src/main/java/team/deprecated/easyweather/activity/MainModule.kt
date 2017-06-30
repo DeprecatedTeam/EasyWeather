@@ -2,12 +2,15 @@ package team.deprecated.easyweather.activity
 
 import dagger.Binds
 import dagger.Module
-import dagger.android.support.DaggerAppCompatActivity
-import team.deprecated.easyweather.di.scope.ActivityScope
+import team.deprecated.easyweather.activity.mvp.MainPresenter
+import team.deprecated.easyweather.activity.mvp.MainPresenterImpl
 
 @Module
 abstract class MainModule {
-    @Binds
-    abstract fun provideActivity(activity : MainActivity) : DaggerAppCompatActivity
 
+    @Binds
+    abstract fun provideActivity(activity : MainActivity): MainActivity
+
+    @Binds
+    abstract fun providePresenter(presenter: MainPresenterImpl): MainPresenter
 }
