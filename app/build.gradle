@@ -57,6 +57,10 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
 
+    compile 'com.hannesdorfmann.mosby3:mvp:3.0.4' // Plain MVP
+    // or
+    compile 'com.hannesdorfmann.mosby3:viewstate:3.0.4' // MVP + ViewState support
+
     // SUPPORT
     compile "com.android.support:appcompat-v7:$supportLibraryVersion"
     compile "com.android.support:mediarouter-v7:$supportLibraryVersion"

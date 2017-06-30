@@ -1,6 +1,5 @@
 package team.deprecated.easyweather
 
-import android.app.Application
 import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
