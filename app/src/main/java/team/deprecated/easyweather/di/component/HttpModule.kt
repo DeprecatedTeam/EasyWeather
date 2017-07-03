@@ -20,7 +20,7 @@ class HttpModule{
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient):Retrofit = Retrofit.Builder()
-            .baseUrl("URL")
+            .baseUrl(ApplicationVersionSwitch.SERVICE_ADDRES)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(okHttpClient)
