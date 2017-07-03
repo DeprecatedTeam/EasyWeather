@@ -10,7 +10,9 @@ import team.deprecated.easyweather.di.scope.ApplicationScope
 @Component(modules = arrayOf(
         AndroidSupportInjectionModule::class,
         ActivityBindingModule::class,
-        HttpModule::class
+        HttpModule::class,
+        RxModule::class,
+        ManagerModule::class
 ))
 @ApplicationScope
 interface ApplicationComponent : AndroidInjector<WeatherApplication> {

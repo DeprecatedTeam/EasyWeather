@@ -11,6 +11,7 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        presenter.testRequest()
     }
 
 }
