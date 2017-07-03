@@ -11,10 +11,14 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasFragmentInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
+import javax.inject.Provider
 
 
 abstract class BaseActivity<V : MvpView, P : MvpPresenter<V>> : MvpActivity<V, P>(),
         HasFragmentInjector, HasSupportFragmentInjector {
+
+    @Inject
+    lateinit var providerPresenter: Provider<P>
 
     @Inject
     lateinit var supportFragmentInjector: DispatchingAndroidInjector<Fragment>
@@ -34,4 +38,6 @@ abstract class BaseActivity<V : MvpView, P : MvpPresenter<V>> : MvpActivity<V, P
     override fun fragmentInjector(): AndroidInjector<android.app.Fragment> {
         return frameworkFragmentInjector
     }
+
+    override fun createPresenter(): P = providerPresenter.get()
 }

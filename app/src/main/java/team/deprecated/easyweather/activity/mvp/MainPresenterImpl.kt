@@ -1,7 +1,11 @@
 package team.deprecated.easyweather.activity.mvp
 
+import javax.inject.Inject
 
-class MainPresenterImpl: MainPresenter {
+
+class MainPresenterImpl
+    @Inject constructor()
+    : MainPresenter {
 
     var mainView: MainView? = null
 
