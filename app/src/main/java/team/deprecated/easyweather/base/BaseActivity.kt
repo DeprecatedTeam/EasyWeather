@@ -34,4 +34,5 @@ abstract class BaseActivity<V : MvpView, P : MvpPresenter<V>> : MvpActivity<V, P
     override fun fragmentInjector(): AndroidInjector<android.app.Fragment> {
         return frameworkFragmentInjector
     }
+
 }
