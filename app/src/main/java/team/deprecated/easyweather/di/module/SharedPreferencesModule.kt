@@ -1,6 +1,8 @@
 package team.deprecated.easyweather.di.module
 
+import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import team.deprecated.easyweather.data.sharedprefs.AppSharedPrefs
 import team.deprecated.easyweather.data.sharedprefs.SharedPrefs
 import team.deprecated.easyweather.di.ApplicationModule
@@ -12,7 +14,7 @@ import javax.inject.Singleton
         InfoModule::class
 ))
 abstract class SharedPreferencesModule {
-    @Singleton
+    @Binds
     @ApplicationScope
     abstract fun providePreferences(preference: SharedPrefs): AppSharedPrefs
 }

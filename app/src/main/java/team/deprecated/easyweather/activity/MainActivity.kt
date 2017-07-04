@@ -13,5 +13,4 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView {
         setContentView(R.layout.activity_main)
         presenter.testRequest()
     }
-
 }

@@ -9,5 +9,5 @@ import team.deprecated.easyweather.di.qualifier.SharedInfo
 class InfoModule {
     @Provides
     @SharedInfo
-    fun provideSharedPrefsInfo() = ApplicationVersionSwitch.Constants.SHARED_PREFERENCES_NAME
+    fun provideSharedPrefsInfo() = ApplicationVersionSwitch.Companion.SHARED_PREFERENCES_NAME
 }
