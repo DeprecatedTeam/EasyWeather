@@ -5,6 +5,7 @@ import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import team.deprecated.easyweather.WeatherApplication
 import team.deprecated.easyweather.di.ActivityBindingModule
+import team.deprecated.easyweather.di.module.SharedPreferencesModule
 import team.deprecated.easyweather.di.scope.ApplicationScope
 
 @Component(modules = arrayOf(
@@ -12,7 +13,8 @@ import team.deprecated.easyweather.di.scope.ApplicationScope
         ActivityBindingModule::class,
         HttpModule::class,
         RxModule::class,
-        ManagerModule::class
+        ManagerModule::class,
+        SharedPreferencesModule::class
 ))
 @ApplicationScope
 interface ApplicationComponent : AndroidInjector<WeatherApplication> {

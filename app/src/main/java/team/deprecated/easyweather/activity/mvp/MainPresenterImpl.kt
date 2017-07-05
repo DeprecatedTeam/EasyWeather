@@ -3,13 +3,14 @@ package team.deprecated.easyweather.activity.mvp
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import team.deprecated.easyweather.api.WeaterApi
+import team.deprecated.easyweather.data.sharedprefs.AppSharedPrefs
 import team.deprecated.easyweather.model.BaseResponse
 import team.deprecated.easyweather.model.WeatherResponse
 import javax.inject.Inject
 
 
 class MainPresenterImpl
-@Inject constructor(val disposable: CompositeDisposable, val manager: WeaterApi)
+@Inject constructor(val disposable: CompositeDisposable, val manager: WeaterApi, val sharedPrefs :AppSharedPrefs)
     : MainPresenter {
 
     var mainView: MainView? = null
@@ -21,6 +22,8 @@ class MainPresenterImpl
     }
 
     override fun testRequest() {
+        sharedPrefs.setDefaultLocation("TEST")
+        val  location = sharedPrefs.getDefaultLocation()
         disposable.add(
                 manager.featchWeater(object : DisposableSingleObserver<WeatherResponse>() {
                     override fun onError(e: Throwable?) {

@@ -40,5 +40,4 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView, Location
         var locationManager:LocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,10f,MyLocationListener(this))
     }
-
 }
