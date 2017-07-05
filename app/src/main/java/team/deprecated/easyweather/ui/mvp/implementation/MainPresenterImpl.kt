@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 
 class MainPresenterImpl
-@Inject constructor(val disposable: CompositeDisposable, val manager: WeaterApi, val sharedPrefs :AppSharedPrefs)
+@Inject constructor(val disposable: CompositeDisposable, val manager: WeaterApi, val sharedPrefs: AppSharedPrefs)
     : MainPresenter {
 
     var mainView: MainView? = null
@@ -22,11 +22,11 @@ class MainPresenterImpl
         mainView = null
     }
 
-    override fun getWeaterByCoordinates(lat:String,lon:String) {
+    override fun getWeaterByCoordinates(lat: String, lon: String) {
         sharedPrefs.setDefaultLocation("TEST")
-        val  location = sharedPrefs.getDefaultLocation()
+        val location = sharedPrefs.getDefaultLocation()
         disposable.add(
-                manager.featchWeater(lat,lon,object : DisposableSingleObserver<WeatherResponse>() {
+                manager.featchWeater(lat, lon, object : DisposableSingleObserver<WeatherResponse>() {
                     override fun onError(e: Throwable?) {
                         e.toString()
                     }

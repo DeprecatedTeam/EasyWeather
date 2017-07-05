@@ -1,6 +1,7 @@
 package team.deprecated.easyweather.ui.activity
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.LocationManager

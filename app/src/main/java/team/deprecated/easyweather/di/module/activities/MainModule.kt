@@ -9,7 +9,6 @@ import team.deprecated.easyweather.ui.mvp.implementation.MainPresenterImpl
 
 @Module
 abstract class MainModule {
-
     @Binds
     @ActivityScope
     abstract fun provideActivity(activity : MainActivity): MainActivity
