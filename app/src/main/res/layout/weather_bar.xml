@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/hummyState"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/pressureState"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sunDown"
+        app:srcCompat="@drawable/humidity"
+        app:layout_constraintTop_toTopOf="@+id/sunDown"
+        app:layout_constraintBottom_toBottomOf="@+id/sunDown"
+        android:layout_marginBottom="0dp" />
+
+    <ImageView
+        android:id="@+id/pressureState"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/hummyState"
+        app:srcCompat="@drawable/preesure"
+        app:layout_constraintTop_toTopOf="@+id/hummyState"
+        app:layout_constraintBottom_toBottomOf="@+id/hummyState"
+        android:layout_marginBottom="0dp" />
+
+    <TextView
+        android:id="@+id/hummyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        tools:text="wilgotność"
+        app:layout_constraintBottom_toBottomOf="@+id/sunUpText"
+        app:layout_constraintEnd_toEndOf="@+id/hummyState"
+        app:layout_constraintStart_toStartOf="@+id/hummyState"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pressureText"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        tools:text="ciśnienie"
+        app:layout_constraintEnd_toEndOf="@+id/pressureState"
+        app:layout_constraintStart_toStartOf="@+id/pressureState"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/sunUpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        tools:text="wschód"
+        app:layout_constraintBottom_toTopOf="@+id/sunUp"
+        app:layout_constraintEnd_toEndOf="@+id/sunUp"
+        app:layout_constraintStart_toStartOf="@+id/sunUp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/sunDownText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="zachód"
+        app:layout_constraintBottom_toBottomOf="@+id/sunUpText"
+        app:layout_constraintEnd_toEndOf="@+id/sunDown"
+        app:layout_constraintStart_toStartOf="@+id/sunDown"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <ImageView
+        android:id="@+id/sunDown"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/hummyState"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/sunUp"
+        app:srcCompat="@drawable/sun_down"
+        app:layout_constraintTop_toTopOf="@+id/sunUp"
+        app:layout_constraintBottom_toBottomOf="@+id/sunUp"
+        android:layout_marginBottom="0dp" />
+
+    <ImageView
+        android:id="@+id/sunUp"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintDimensionRatio="w,1:1"
+        app:layout_constraintEnd_toStartOf="@+id/sunDown"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sun_up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp" />
+
+</android.support.constraint.ConstraintLayout>

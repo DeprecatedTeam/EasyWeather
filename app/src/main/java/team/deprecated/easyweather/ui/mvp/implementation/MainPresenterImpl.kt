@@ -1,10 +1,11 @@
-package team.deprecated.easyweather.activity.mvp
+package team.deprecated.easyweather.ui.mvp.implementation
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
+import team.deprecated.easyweather.ui.mvp.presenter.MainPresenter
+import team.deprecated.easyweather.ui.mvp.view.MainView
 import team.deprecated.easyweather.api.WeaterApi
 import team.deprecated.easyweather.data.sharedprefs.AppSharedPrefs
-import team.deprecated.easyweather.model.BaseResponse
 import team.deprecated.easyweather.model.WeatherResponse
 import javax.inject.Inject
 
