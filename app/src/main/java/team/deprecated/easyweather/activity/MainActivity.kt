@@ -29,7 +29,8 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView, Location
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if(permissions[0]?.equals(permissions))
+            getLocation()
     }
 
     override fun provideLocation(lon: Double, lan: Double) {
