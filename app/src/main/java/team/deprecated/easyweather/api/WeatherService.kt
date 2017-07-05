@@ -3,7 +3,7 @@ package team.deprecated.easyweather.api
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
-import team.deprecated.easyweather.model.BaseResponse
+import team.deprecated.easyweather.model.WeatherResponse
 
 /**
  * Created by Łukasz on 2017-07-03.
@@ -11,5 +11,5 @@ import team.deprecated.easyweather.model.BaseResponse
 interface WeatherService{
     @GET("weather?")
     fun GetWeater(@Query("q") city: String,
-                  @Query("APPID") key:String) : Single<BaseResponse>
+                  @Query("APPID") key:String) : Single<WeatherResponse>
 }

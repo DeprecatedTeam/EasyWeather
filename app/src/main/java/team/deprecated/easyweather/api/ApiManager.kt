@@ -5,7 +5,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
 import team.deprecated.easyweather.ApplicationVersionSwitch
-import team.deprecated.easyweather.model.BaseResponse
+import team.deprecated.easyweather.model.WeatherResponse
 import javax.inject.Inject
 
 /**
@@ -15,7 +15,7 @@ import javax.inject.Inject
 class ApiManager
 @Inject constructor(var service: WeatherService):WeaterApi {
 
-    override fun featchWeater(observ: DisposableSingleObserver<BaseResponse>): Disposable =
+    override fun featchWeater(observ: DisposableSingleObserver<WeatherResponse>): Disposable =
             service.GetWeater("katowice,pl", ApplicationVersionSwitch.SECRET_KEY)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

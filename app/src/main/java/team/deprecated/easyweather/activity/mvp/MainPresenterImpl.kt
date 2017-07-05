@@ -4,6 +4,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import team.deprecated.easyweather.api.WeaterApi
 import team.deprecated.easyweather.model.BaseResponse
+import team.deprecated.easyweather.model.WeatherResponse
 import javax.inject.Inject
 
 
@@ -21,12 +22,12 @@ class MainPresenterImpl
 
     override fun testRequest() {
         disposable.add(
-                manager.featchWeater(object : DisposableSingleObserver<BaseResponse>() {
+                manager.featchWeater(object : DisposableSingleObserver<WeatherResponse>() {
                     override fun onError(e: Throwable?) {
                         e.toString()
                     }
 
-                    override fun onSuccess(t: BaseResponse?) {
+                    override fun onSuccess(t: WeatherResponse?) {
                         t.toString()
                     }
 
