@@ -1,7 +1,6 @@
-package team.deprecated.easyweather.activity
+package team.deprecated.easyweather.ui.activity
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.pm.PackageManager
 import android.location.LocationManager
@@ -9,8 +8,8 @@ import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import team.deprecated.easyweather.R
-import team.deprecated.easyweather.activity.mvp.MainPresenter
-import team.deprecated.easyweather.activity.mvp.MainView
+import team.deprecated.easyweather.ui.mvp.presenter.MainPresenter
+import team.deprecated.easyweather.ui.mvp.view.MainView
 import team.deprecated.easyweather.base.BaseActivity
 import team.deprecated.easyweather.location.LocationProvider
 import team.deprecated.easyweather.location.MyLocationListener

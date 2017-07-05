@@ -1,4 +1,4 @@
-package team.deprecated.easyweather.activity.mvp
+package team.deprecated.easyweather.ui.mvp.view
 
 import com.hannesdorfmann.mosby3.mvp.MvpView
 
