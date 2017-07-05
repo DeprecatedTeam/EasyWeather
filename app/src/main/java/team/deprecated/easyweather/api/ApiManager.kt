@@ -15,8 +15,8 @@ import javax.inject.Inject
 class ApiManager
 @Inject constructor(var service: WeatherService):WeaterApi {
 
-    override fun featchWeater(observ: DisposableSingleObserver<WeatherResponse>): Disposable =
-            service.GetWeater("katowice,pl", ApplicationVersionSwitch.SECRET_KEY)
+    override fun featchWeater(lat:String,lon:String,observ: DisposableSingleObserver<WeatherResponse>): Disposable =
+            service.GetWeater(lat,lon, ApplicationVersionSwitch.SECRET_KEY)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribeWith(observ)

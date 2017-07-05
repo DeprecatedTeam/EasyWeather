@@ -29,14 +29,16 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView, Location
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        if(permissions[0]?.equals(permissions))
+        val per:String = permissions[0]
+        if(per?.equals(permissions))
             getLocation()
     }
 
     override fun provideLocation(lon: Double, lan: Double) {
-//        zrób coś z tym
+        presenter.getWeaterByCoordinates(lan.toString(),lon.toString())
     }
 
+    @SuppressLint("MissingPermission")
     fun getLocation(){
         var locationManager:LocationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,5000,10f,MyLocationListener(this))

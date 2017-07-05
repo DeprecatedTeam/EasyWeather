@@ -9,5 +9,5 @@ import team.deprecated.easyweather.model.WeatherResponse
  */
 
 interface WeaterApi {
-    fun featchWeater(observ:DisposableSingleObserver<WeatherResponse>) : Disposable
+    fun featchWeater(lat:String,lon:String,observ:DisposableSingleObserver<WeatherResponse>) : Disposable
 }

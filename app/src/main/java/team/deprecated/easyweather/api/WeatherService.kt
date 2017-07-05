@@ -10,6 +10,7 @@ import team.deprecated.easyweather.model.WeatherResponse
  */
 interface WeatherService{
     @GET("weather?")
-    fun GetWeater(@Query("q") city: String,
+    fun GetWeater(@Query("lat") lat: String,
+                  @Query("lon") lon:String,
                   @Query("APPID") key:String) : Single<WeatherResponse>
 }

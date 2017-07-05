@@ -21,11 +21,11 @@ class MainPresenterImpl
         mainView = null
     }
 
-    override fun testRequest() {
+    override fun getWeaterByCoordinates(lat:String,lon:String) {
         sharedPrefs.setDefaultLocation("TEST")
         val  location = sharedPrefs.getDefaultLocation()
         disposable.add(
-                manager.featchWeater(object : DisposableSingleObserver<WeatherResponse>() {
+                manager.featchWeater(lat,lon,object : DisposableSingleObserver<WeatherResponse>() {
                     override fun onError(e: Throwable?) {
                         e.toString()
                     }
